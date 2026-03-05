@@ -1,0 +1,69 @@
+// User function Template for Java
+//bruteforce solution
+class Solution {
+    
+    static boolean isVowel(char c)
+    {
+        return c=='a'||c=='e'||c=='i'||c=='o'||c=='u';
+    }
+   
+    String modify(String s) {
+        // your code here
+        StringBuilder vowelSt=new StringBuilder();
+        
+        for(int i=0;i<s.length();i++)
+        {
+            if(isVowel(s.charAt(i)))
+            {
+                vowelSt.append(s.charAt(i));
+            }
+        }
+        
+        StringBuilder res=new StringBuilder(s);
+        int idx=vowelSt.length()-1;
+        for(int i=0;i<s.length();i++)
+        {
+            if(isVowel(s.charAt(i)))
+            {
+                res.setCharAt(i,vowelSt.charAt(idx--));
+            }
+        }
+        return res.toString();
+        
+    }
+
+  //Expected solution using pointers
+  // User function Template for Java
+
+class Solution {
+    
+    static boolean isVowel(char c)
+    {
+        return c=='a'||c=='e'||c=='i'||c=='o'||c=='u';
+    }
+    String modify(String s) {
+        // your code here
+        char[] c=s.toCharArray();
+        int right=s.length()-1,left=0;
+        while(left<right){
+        while(left<right && ! isVowel(c[left]))
+        {
+            left++;
+        }
+        while(left<right && ! isVowel(c[right]))
+        {
+            right--;
+        }
+        if(left<right)
+        {
+           char temp=c[left];
+           c[left]=c[right];
+           c[right]=temp;
+           left++;
+           right--;
+        }
+        }
+        return new String(c);
+    }
+}
+}
