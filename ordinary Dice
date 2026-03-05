@@ -1,4 +1,41 @@
+//Bruteforce Approach
+class Solution{
+static int OppositeFaceofDice(int n){
+{
+  if(n==1)
+{
+retrun 6;
+}
+if(n==2)
+{
+return 5;
+}
+if(n==3)
+{
+return 4;
+}
+if(n==4)
+{
+return 3;
+}
+if(n==5)
+{
+return 2;
+}
+if(n==6){
+return 1;}
+}
+}
+
+
+
+
+
+
+
+
 // User function Template for Java
+//Expected Approach
 class Solution {
     static int oppositeFaceOfDice(int n) {
         // code here
