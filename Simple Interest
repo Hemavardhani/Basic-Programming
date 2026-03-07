@@ -1,0 +1,9 @@
+// User function Template for Java
+
+class Solution {
+    double simpleInterest(int p, int r, int t) {
+        // code here
+         double res=(p*t*r)/100.0;
+         return res;
+    }
+}
